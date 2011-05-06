@@ -3,6 +3,7 @@
 %table
   %tr
     %th Name
+    %th Borough
     %th
     %th
     %th
@@ -10,6 +11,7 @@
   - @developments.each do |development|
     %tr
       %td= development.name
+      %td= development.borough
       %td= link_to 'Show', development
       %td= link_to 'Edit', edit_development_path(development)
       %td= link_to 'Destroy', development, :confirm => 'Are you sure?', :method => :delete
