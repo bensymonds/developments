@@ -1,0 +1,17 @@
+%h1 Listing developments
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @developments.each do |development|
+    %tr
+      %td= development.name
+      %td= link_to 'Show', development
+      %td= link_to 'Edit', edit_development_path(development)
+      %td= link_to 'Destroy', development, :confirm => 'Are you sure?', :method => :delete
+
+= link_to 'New Development', new_development_path
