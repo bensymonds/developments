@@ -1,4 +1,13 @@
 %p#notice= notice
+%strong Name:
+= @development.name
+%br
+%strong Borough:
+= @development.borough
+%br
+%strong Address:
+= @development.address
+%br
 
 = link_to 'Edit', edit_development_path(@development)
 |
