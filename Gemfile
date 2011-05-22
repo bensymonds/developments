@@ -8,4 +8,5 @@ gem "haml", "~> 3.1.1"
 
 group :development, :test do
   gem 'wirble'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
