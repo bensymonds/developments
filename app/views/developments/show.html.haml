@@ -6,7 +6,7 @@
 = @development.borough
 %br
 %strong Address:
-= @development.address
+= @development.address.postcode_out + " " + @development.address.postcode_in + "," + @development.address.rest
 %br
 
 = link_to 'Edit', edit_development_path(@development)

@@ -12,7 +12,14 @@
     = f.label :borough
     = f.text_field :borough
     %br/
-    = f.label :address
-    = f.text_area :address
+  = f.fields_for :address do |f_address|
+    = f_address.label :postcode_out
+    = f_address.text_field :postcode_out
+    %br/
+    = f_address.label :postcode_in
+    = f_address.text_field :postcode_in
+    %br/
+    = f_address.label :rest
+    = f_address.text_area :rest
   .actions
     = f.submit
