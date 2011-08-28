@@ -10,4 +10,5 @@ class Development
   STATUSES = %w( pre-planning planning approved demolition site-prep construction complete )
   field :status, :type => String
   validates_inclusion_of :status, :in => STATUSES
+  belongs_to :opportunity_area
 end
