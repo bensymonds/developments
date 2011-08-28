@@ -11,4 +11,6 @@ class Development
   field :status, :type => String
   validates_inclusion_of :status, :in => STATUSES
   belongs_to :opportunity_area
+  embeds_many :links
+  accepts_nested_attributes_for :links, :reject_if => :all_blank
 end
