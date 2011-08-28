@@ -10,7 +10,6 @@ class DevelopmentsController < ApplicationController
 
   def new
     @development = Development.new
-    @development.build_address
   end
 
   def edit

@@ -1,4 +1,4 @@
-= form_for(@development) do |f|
+= form_for setup_development(@development) do |f|
   - if @development.errors.any?
     #error_explanation
       %h2= pluralize(@development.errors.count, "error") +  " prohibited this development from being saved:"
@@ -9,17 +9,30 @@
     = f.label :name
     = f.text_field :name
     %br/
+    = f.label :ward
+    = f.text_field :ward
+    %br/
+    = f.label :location
+    = f.text_field :location
+    %br/
     = f.label :borough
     = f.text_field :borough
-    %br/
-  = f.fields_for :address do |f_address|
-    = f_address.label :postcode_out
-    = f_address.text_field :postcode_out
-    %br/
-    = f_address.label :postcode_in
-    = f_address.text_field :postcode_in
-    %br/
-    = f_address.label :rest
-    = f_address.text_area :rest
+
+    = f.fields_for :address do |f_address|
+      = f_address.label :postcode_out
+      = f_address.text_field :postcode_out
+      %br/
+      = f_address.label :postcode_in
+      = f_address.text_field :postcode_in
+      %br/
+      = f_address.label :rest
+      = f_address.text_area :rest
+      %br/
+
+    = f.label :status
+    = select :development, :status, Development::STATUSES, :include_blank => true
+    = f.fields_for :links do |f_link|
+      = f_link.label :url
+      = f_link.url_field :url
   .actions
     = f.submit
