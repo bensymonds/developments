@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
+gem "jquery-rails"
 gem "mongoid"
 gem "bson_ext"
 gem "haml"
