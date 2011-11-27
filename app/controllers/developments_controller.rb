@@ -10,12 +10,12 @@ class DevelopmentsController < ApplicationController
 
   def new
     @development = Development.new
-    @companies = Company.all
+    @companies = Company.all.sort_by(&:name)
   end
 
   def edit
     @development = Development.find params[:id]
-    @companies = Company.all
+    @companies = Company.all.sort_by(&:name)
   end
 
   def create
