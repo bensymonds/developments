@@ -3,7 +3,6 @@ defaults: &defaults
   persist_in_safe_mode: true
   allow_dynamic_fields: false
   use_activesupport_time_zone: true
-  embedded_object_id: false
 
 development:
   <<: *defaults
