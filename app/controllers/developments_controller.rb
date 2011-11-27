@@ -10,10 +10,12 @@ class DevelopmentsController < ApplicationController
 
   def new
     @development = Development.new
+    @companies = Company.all
   end
 
   def edit
     @development = Development.find params[:id]
+    @companies = Company.all
   end
 
   def create
