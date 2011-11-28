@@ -34,7 +34,7 @@
     %br/
     - Development::PROJECT_TEAM_ROLES.each do |m|
       = f.label m
-      = select :development, Development.reflect_on_association(m).foreign_key, @companies.collect {|c| [c.name, c._id]}, {}, {:multiple => true}
+      = select :development, Development.reflect_on_association(m).foreign_key, @companies.select {|c| c.project_team_roles.include?(m)}.collect {|c| [c.name, c._id]}, {}, {:multiple => true}
       %br/
     = f.fields_for :links do |f_link|
       = f_link.label :url

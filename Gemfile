@@ -15,4 +15,5 @@ end
 group :development, :test do
   gem 'wirble'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'fabrication'
 end
