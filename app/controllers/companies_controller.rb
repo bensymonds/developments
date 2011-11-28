@@ -28,6 +28,7 @@ class CompaniesController < ApplicationController
 
   def update
     @company = Company.find params[:id]
+    params[:company][:project_team_roles] ||= []
 
     if @company.update_attributes params[:company]
       redirect_to @company, :notice => 'Company was successfully updated.'

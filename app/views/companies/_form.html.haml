@@ -8,5 +8,11 @@
   .field
     = f.label :name
     = f.text_field :name
+    %br/
+    = f.label :project_team_roles
+    - Development::PROJECT_TEAM_ROLES.each do |ptr|
+      %br/
+      = check_box_tag "company[project_team_roles][]", ptr, @company.project_team_roles.include?(ptr)
+      = ptr
   .actions
     = f.submit
