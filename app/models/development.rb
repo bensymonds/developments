@@ -16,4 +16,5 @@ class Development
   accepts_nested_attributes_for :links, :reject_if => :all_blank
   PROJECT_TEAM_ROLES = %w(developers planning_consultants architects structural_engineers visualisation_consultants main_contractors)
   PROJECT_TEAM_ROLES.each {|m| has_and_belongs_to_many m, :class_name => "Company"}
+  has_many :buildings
 end
